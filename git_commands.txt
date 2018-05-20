@@ -1,0 +1,272 @@
+PS1="$PS1\n"		// Display the cursor on the next line
+
+BASIC COMMANDS
+
+git --version		// git version 2.11.0
+
+git init 		// Initialise local git repository (in your code directory)
+
+git add <file> 		// Add file(s) to index
+
+git status		// Check status of working tree
+
+git commit		// Commitchanges in index 
+
+git push		// Push to remote repository
+
+git pull		// Pull latest from remote repository
+
+git clone		// Clone repository into a new directory
+
+
+INSTALLING GIT
+
+sudo apt-get install git
+
+
+MORE COMMANDS
+git config --global user.name 'PetyuskaDoom'
+git config --global user.email 'patzer1941@gmail.com'
+
+git add index.html
+
+git status
+
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+# 	new file:   index.html
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#  	 app.js
+#
+
+git rm --cached index.html
+
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#  (use "git add <file>..." to include in what will be committed)
+#
+#	app.js
+#	index.html
+#
+# nothing added to commit but untracked files present (use "git add" to track)
+#
+
+git add *.html		// Add only html files
+git add .		// Adds all files in folder
+
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   app.js
+#	new file:   index.html
+#
+
+git commit
+
+# *** Please tell me who you are.
+#
+# Run
+#
+#  git config --global user.email "you@example.com"
+#  git config --global user.name "Your Name"
+#
+# to set your account's default identity.
+# Omit --global to set the identity only in this repository.
+#
+# fatal: empty ident name (for <(null)>) not allowed
+#
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+ Initial commit
+#
+# Changes to be committed:
+#       new file:   app.js
+#       new file:   index.html
+#
+
+bash (esq --> :wq --> Enter)
+
+Ctrl + 0
+Enter
+Ctrl + x
+y
+
+git commit
+[master (root-commit) 63754e1]  Initial commit
+ 2 files changed, 12 insertions(+)
+ create mode 100644 app.js
+ create mode 100644 index.html
+
+git status
+On branch master
+nothing to commit, working tree clean
+
+
+git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git add .
+git commit -m 'Changed app.js'
+
+touch .gitignore	// Add files and folders to exclude from version control
+
+
+
+git branch login		// Create a branch off master
+git checkout login		// Switch to login branch. Any changes made on a branch will only be available on that branch.
+
+touch login.html
+make change to index.html
+
+git checkout master
+
+git merge login			// Merge the login branch with the master branch
+
+
+…or create a new repository on the command line
+ echo "# OnlineTutorials" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/PetyuskaDoom/OnlineTutorials.git
+git push -u origin master
+…or push an existing repository from the command line
+ git remote add origin https://github.com/PetyuskaDoom/OnlineTutorials.git
+git push -u origin master
+
+
+git remote
+git remote add origin https://github.com/PetyuskaDoom/myappsample.git
+git remote
+origin
+
+git push -u origin master
+Username for 'https://github.com': PetyuskaDoom
+Password for 'https://PetyuskaDoom@github.com': 
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (16/16), 1.51 KiB | 0 bytes/s, done.
+Total 16 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/PetyuskaDoom/myappsample.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+
+
+
+touch README.md
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+
+git add .
+
+git commit -m 'Added readme'
+[master fbd9417] Added readme
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+git push
+Username for 'https://github.com': PetyuskaDoom
+Password for 'https://PetyuskaDoom@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 329 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/PetyuskaDoom/myappsample.git
+   52c6d54..fbd9417  master -> master
+
+
+git clone https://github.com/PetyuskaDoom/myappsample.git
+
+Cloning into 'myappsample'...
+remote: Counting objects: 19, done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 19 (delta 4), reused 19 (delta 4), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
